@@ -155,3 +155,50 @@ body {
   border-color: #28a745 transparent #28a745 transparent;
   animation: lds-hourglass 1.2s infinite;
 }
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    padding: 2rem 0.5rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .btn {
+    width: 100%;
+    max-width: 400px;
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+  }
+
+  .meal_desc {
+    grid-template-columns: 1fr;
+  }
+
+  .meal_ingredients ul.ingredient-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    width: 100%;
+  }
+
+  .meal_ingredients ul.ingredient-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
