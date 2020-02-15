@@ -97,3 +97,35 @@ body {
   text-align: justify;
 }
 
+.normal {
+  font-weight: 400;
+}
+
+.meal_ingredients h4 {
+  font-size: 1.5rem;
+  font-family: "Lemonada", cursive;
+}
+
+.meal_ingredients {
+  margin-top: 2rem;
+}
+
+.meal_ingredients ul.ingredient-list {
+  list-style: none;
+  margin-top: 1rem;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 4rem;
+  grid-auto-rows: 4rem;
+}
+
+.meal_ingredients ul.ingredient-list li {
+  margin-bottom: 0.3rem;
+  font-size: 1.1rem;
+}
+
+.meal_video {
+  margin-top: 2rem;
+}
+
