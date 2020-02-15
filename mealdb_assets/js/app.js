@@ -63,7 +63,7 @@ function fetchMeal() {
         .then(response => response.json())
         .then(data => {
             mealData = data.meals[0];
-            console.log(mealData);
+            // console.log(mealData);
             if (mealData.idMeal !== undefined) {
                 displayMeal();
                 fetching = false;
