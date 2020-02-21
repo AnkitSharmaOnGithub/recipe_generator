@@ -5,6 +5,5 @@ Random Recipe Generator using the Meal Db API.
 
 ###Future Versions :-
 
-1)Add Search Functionality.
-
-2)Add Food Type Functionality(like Indian,Italian,Chinese etc.).
+1)Will Add Search Functionality.
+2)Will  Add Food Type Filters(like Indian, Italian, Chinese etc.).
