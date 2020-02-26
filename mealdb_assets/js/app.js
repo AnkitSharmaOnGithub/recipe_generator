@@ -28,8 +28,9 @@ var ingredient__list = document.querySelector('.ingredient-list');
 var loader = document.querySelector('.lds-hourglass');
 
 document.addEventListener('DOMContentLoaded', function () {
+    // Fetch random meal on click
     document.querySelector('#get_meal').addEventListener('click', function () {
-        // console.log('Clicked');
+        // Changing Loader State for display while loading
         loader.style.opacity = 1;
         loader.style.zIndex = 2;
         document.querySelector('#display_meal').style.display = 'none';
@@ -40,7 +41,24 @@ document.addEventListener('DOMContentLoaded', function () {
                 loader.style.display = 'none';
             }, 2000
         )
-    })
+    });
+
+    document.querySelector('#search_meal').addEventListener('click', function () {
+        // Fetching user entered string
+        var searchString = document.querySelector('#recipe_name').value;
+
+        // Changing Loader State for display while loading
+        loader.style.opacity = 1;
+        loader.style.zIndex = 2;
+        document.querySelector('#display_meal').style.display = 'none';
+        setTimeout(
+            () => {
+                resetDOM();
+                fetchMealByName(searchString);
+                loader.style.display = 'none';
+            }, 2000
+        )
+    });
 });
 
 function resetDOM() {
@@ -71,6 +89,25 @@ function fetchMeal() {
         })
         .catch(error => {
             alert('Our Servers are down. Right Now!.');
+        })
+}
+
+function fetchMealByName(name){
+    var promise = fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`);
+
+    promise
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            mealData = data.meals[0];
+            // console.log(mealData);
+            if (mealData.idMeal !== undefined) {
+                displayMeal();
+                fetching = false;
+            }
+        })
+        .catch(error => {
+            alert('Could not find recipe with the name entered. Please enter another name');
         })
 }
 
