@@ -40,7 +40,6 @@ body {
   margin-bottom: 1rem;
 }
 
-
 .btn {
   border-radius: 0.2rem;
   color: #fff;
@@ -55,6 +54,17 @@ body {
 .btn-green {
   background-color: #28a745;
   border: 1px solid #28a745;
+}
+
+#recipe_name{
+  font-size: 0.8rem;
+  font-family: "Lemonada", cursive;
+  height: 27px;
+  display: block;
+  margin: 1rem auto;
+  padding: .3rem 1rem;
+  background: #F6F6F6;
+  border: 1px solid #989898;
 }
 
 /* Display Meal */
